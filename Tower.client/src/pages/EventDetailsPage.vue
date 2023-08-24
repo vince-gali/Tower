@@ -21,16 +21,19 @@
 
                         <!-- <button v-if="!isAttending" @click="attendEvent()">Attend</button> -->
 
-                        <button  :disabled="event?.capacity==event?.ticketCount" v-if="!isAttending" 
+                        <button  :disabled="event?.capacity==event?.ticketCount" v-if="!isAttending && event?.isCanceled == false" 
                         @click="attendEvent()">Attend</button>
 
                         <h3 v-if="event?.capacity == event?.ticketCount">Sorry this event is sold out!</h3>
+
+                        <h3 v-if="event?.isCanceled == true">Sorry this event has been cancelled</h3>
 
                         <!-- <button :disabled="isAttending" v-if="isAttending">Already going</button> -->
                         
                         <button @click="leaveEvent()" v-if="isAttending">Leave Event</button>
 
-                        <!-- <button v-if="{{ event?.capacity - event?.ticketCount = 0 }}">Event Sold Out</button> -->
+                        
+
 
                         <button @click="deleteEvent(eventProp?.id)" v-if="eventProp?.creatorId == account?.id"><i class="mdi mdi-pencil"></i> Delete</button>
 
@@ -149,6 +152,7 @@ export default {
             tickets: computed(()=> AppState.tickets),
             user: computed(()=> AppState.user),
             isAttending: computed(()=> AppState.tickets.find(t => t.accountId == AppState.user.id)),
+            // isCanceled: computed(()=> AppState.isCanceled),
 
             async attendEvent(){
                 try {

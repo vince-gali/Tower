@@ -5,7 +5,7 @@
 <router-link :to=" {name: 'EventDetails', params: {id: eventProp?.event?.id}}">
     <div class="card">
         <img class="container-fluid" :src="eventProp?.event.coverImg" alt="">
-            <div>
+            <div class="p-5">
                 <h4>{{ eventProp?.event.name }}</h4>
                 <p>{{eventProp?.event.location}}</p>
                 <p>Start Date: {{eventProp?.event.startDate}}</p>
@@ -28,11 +28,14 @@
                 <p>{{eventProp?.location}}</p>
                 <p>Start Date: {{eventProp?.startDate}}</p>
                 <p>Capacity: {{eventProp?.capacity}}</p>
+               
+                    <!-- <h4 v-if="eventProp ?.isCanceled = true">Event has been cancelled</h4> -->
+              
             </div>
         </div>
     </router-link>
     <div>
-        <button @click="deleteEvent(eventProp?.id)" v-if="eventProp?.creatorId == account?.id"><i class="mdi mdi-pencil"></i> Delete</button>
+        <button @click="deleteEvent(eventProp?.id)" v-if="eventProp?.creatorId == account?.id"><i class="mdi mdi-pencil"></i> Cancel Event</button>
     </div>
 </div>
 
@@ -57,6 +60,7 @@ export default {
         
 
         return {
+            // isCanceled: computed(()=> AppState.isCanceled),
 
             async deleteEvent(eventId){
                 try {

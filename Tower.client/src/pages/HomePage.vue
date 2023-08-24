@@ -5,9 +5,9 @@
     <!-- // TODO cover img here -->
   </section>
 
-  <section class="row justify-content-center bg-dark py-3">
+  <section class="row justify-content-center  py-3">
     <div class="">
-      <div class="d-flex justify-content-around rounded">
+      <div class="d-flex justify-content-around rounded filters py-3">
         <button @click="filterBy='' " class="btn btn-outline-light">All</button>
         <button @click="filterBy='expo' " class="btn btn-outline-light">Expos</button>
         <button @click="filterBy='convention' " class="btn btn-outline-light">Conventions</button>
@@ -21,8 +21,8 @@
   </section>
 
   <!-- //NOTE - events here -->
-  <section class="row">
-    <div class="col-md-3" v-for="e in events" :key="e.id"> 
+  <section class="row ">
+    <div class="col-md-3 py-3" v-for="e in events" :key="e.id"> 
       <!-- // NOTE - events card template here -->
       <EventCard :eventProp="e" />
     </div>
@@ -91,6 +91,13 @@ export default {
       object-fit: contain;
       object-position: center;
     }
+    
   }
+
+  
 }
+.filters{
+    background-color: rgb(107, 113, 128);
+    // border: 10rem;
+  }
 </style>

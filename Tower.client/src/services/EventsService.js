@@ -24,8 +24,8 @@ class EventsService{
     async deleteEvent(eventId){
         logger.log('[DELETING EVENT]', eventId)
         const res = await api.delete(`api/events/${eventId}`)
-        logger.log('[DELETING EVENT]', res.data)
-        AppState.events = AppState.events.filter(e=> e.id != eventId)
+        logger.log('[CANCELLED EVENT]', res.data)
+        // AppState.events = AppState.events.filter(e=> e.id != eventId)
     }
 }
 

@@ -40,7 +40,7 @@
                 </div> -->
 
                 <div class="">
-                    <input class="form-control" type="date" >
+                    <input class="form-control" type="date" v-model="editable.startDate">
                 </div>
                 
                 <div>

@@ -1,13 +1,13 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <nav class="navbar navbar-expand-lg navbar-dark  px-2  flex-column">
     
-    <!-- <div class="d-flex"> -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+ <!-- //NOTE - uncomment below to show drop down of medium size screen -->
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
       aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
     
-    <!-- <div class="d-flex "> -->
+    
     <div class=" collapse navbar-collapse" id="navbarText">
       
       <!-- LOGIN COMPONENT HERE -->
@@ -15,36 +15,26 @@
       
     </div>
 
-    <!-- <div class="d-flex flex-column"> -->
 
       <!-- NOTE create event button here -->
-      <!-- <div> -->
-        
-    <section class="row">
-      <div class="col-10">
-
-      
-    <!-- <div> -->
+ 
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
         <p>Home</p>
       </div>
     </router-link>
-  <!-- </div> -->
 
-  <!-- <div> -->
+    <div>
+    <button class="rounded bg-success p-3" v-if="user.id" data-bs-toggle="modal" data-bs-target="#createEvent">Create Event</button>
+    </div>
+
     <router-link class="navbar-brand d-flex" :to="{ name: 'Account' }">
       <div class="d-flex flex-column align-items-center">
         <p>Account</p>
       </div>
     </router-link> 
 
-  </div>
-  </section>
-  <!-- </div> -->
-  <!-- </div> -->
-<!-- </div> -->
-<!-- </div> -->
+ 
   </nav>
 </template>
 

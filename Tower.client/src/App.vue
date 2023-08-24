@@ -1,26 +1,26 @@
 <template>
-  <header>
+  <header class="">
     <!-- <div class="header-img">
       <img src="" alt="">
     </div> -->
+    
   </header>
 
-  <main>
+  <main class="bg-dark">
 
     
 
     <div class="d-flex">
     <div class="col-10">
-    <h1 class="header-img">TOWER</h1>
-    <!-- <div class="header-img"></div> -->
-    <img src="" alt="">
-    <div>
+    <img class=" py-3 ps-3 header-img" src="./assets/img/header-img.png" alt="">
+    
+    <!-- <div>
     <button v-if="user.id" data-bs-toggle="modal" data-bs-target="#createEvent">Create Event</button>
-    </div>
+    </div> -->
 
       <router-view />
     </div>
-    <div class="col-2 bg-dark">
+    <div class="col-2 bg-secondary">
     <Navbar />
     </div>
   </div>
@@ -70,9 +70,10 @@ footer {
 // }
 
 .header-img{
-  background-image: url('./assets/img/header-img.png');
-  width: 25px;
-  height: 50px;
+  // background-image: url('./assets/img/header-img.png');
+  width: 175px;
+  // height: 50px;
+  // aspect-ratio: 1/1;
 
   
 }
